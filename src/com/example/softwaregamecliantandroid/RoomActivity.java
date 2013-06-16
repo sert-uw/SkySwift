@@ -5,17 +5,24 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.*;
-import android.graphics.Bitmap.Config;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.StateListDrawable;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.Space;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 //アクティビティ間のパラメータ渡し
 public class RoomActivity extends Activity implements View.OnClickListener {
@@ -230,9 +237,10 @@ public class RoomActivity extends Activity implements View.OnClickListener {
 
 		// エディットテキストの生成
 		inputName = new EditText(getApplicationContext());
-		inputName.setText("roomName");
 		inputName.setTextColor(Color.rgb(0, 255, 0));
 		inputName.setBackgroundColor(Color.BLACK);
+		inputName.setInputType(InputType.TYPE_CLASS_TEXT);
+		inputName.setHint("ルーム名");
 		inputName.setLayoutParams(new LinearLayout.LayoutParams(WC, WC));
 		subLayout2.addView(inputName);
 
@@ -246,9 +254,10 @@ public class RoomActivity extends Activity implements View.OnClickListener {
 
 		// エディットテキストの生成
 		inputCom = new EditText(getApplicationContext());
-		inputCom.setText("comment");
 		inputCom.setTextColor(Color.rgb(0, 255, 0));
 		inputCom.setBackgroundColor(Color.BLACK);
+		inputCom.setInputType(InputType.TYPE_CLASS_TEXT);
+		inputCom.setHint("コメント");
 		inputCom.setLayoutParams(new LinearLayout.LayoutParams(WC, WC));
 		subLayout3.addView(inputCom);
 
@@ -281,9 +290,10 @@ public class RoomActivity extends Activity implements View.OnClickListener {
 
 		// エディットテキストの生成
 		inputPass = new EditText(getApplicationContext());
-		inputPass.setText("write pass");
 		inputPass.setTextColor(Color.rgb(0, 255, 0));
 		inputPass.setBackgroundColor(Color.BLACK);
+		inputPass.setInputType(InputType.TYPE_CLASS_TEXT);
+		inputPass.setHint("パスワード");
 		inputPass.setLayoutParams(new LinearLayout.LayoutParams(WC, WC));
 		subLayout4.addView(inputPass);
 

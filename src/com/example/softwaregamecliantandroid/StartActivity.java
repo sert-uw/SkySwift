@@ -6,14 +6,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.Bitmap.Config;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -24,7 +25,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
-import android.widget.Toast;
 
 //アクティビティ間のパラメータ渡し
 public class StartActivity extends Activity
@@ -96,8 +96,9 @@ public class StartActivity extends Activity
 
         //エディットテキストの生成
         userId = new EditText(getApplicationContext());
-        userId.setText("yourID");
         userId.setTextColor(Color.rgb(180,0,255));
+        userId.setInputType(InputType.TYPE_CLASS_TEXT);
+        userId.setHint("yourID");
         userId.setLayoutParams(new LinearLayout.LayoutParams(WC, WC));
         subLayout2.addView(userId);
 
@@ -111,8 +112,9 @@ public class StartActivity extends Activity
 
         //エディットテキストの生成
         userPass = new EditText(getApplicationContext());
-        userPass.setText("yourPass");
         userPass.setTextColor(Color.rgb(180,0,255));
+        userPass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        userPass.setHint("yourPass");
         userPass.setLayoutParams(new LinearLayout.LayoutParams(WC, WC));
         subLayout3.addView(userPass);
 
